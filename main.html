@@ -1,0 +1,82 @@
+import React from "react";
+import battery from "./battery.png";
+import group2 from "./group-2.png";
+import group6 from "./group-6.png";
+import image3 from "./image-3.png";
+import image4 from "./image-4.png";
+import leftSide from "./left-side.png";
+import mobileSignal from "./mobile-signal.svg";
+import rectangle41 from "./rectangle-41.svg";
+import "./style.css";
+import vector15 from "./vector-15.svg";
+import vector16 from "./vector-16.svg";
+import vector17 from "./vector-17.svg";
+import vector18 from "./vector-18.svg";
+import vector19 from "./vector-19.svg";
+import vector20 from "./vector-20.svg";
+import vector21 from "./vector-21.svg";
+import vector22 from "./vector-22.svg";
+import vector23 from "./vector-23.svg";
+import wifi from "./wifi.svg";
+
+export const Home = () => {
+  return (
+    <div className="home">
+      <div className="div">
+        <div className="text-wrapper">Nugget</div>
+
+        <div className="overlap-group">
+          <img className="vector" alt="Vector" src={vector15} />
+
+          <img className="img" alt="Vector" src={vector16} />
+
+          <img className="vector-2" alt="Vector" src={vector17} />
+
+          <img className="vector-3" alt="Vector" src={vector18} />
+
+          <img className="vector-4" alt="Vector" src={vector19} />
+
+          <img className="vector-5" alt="Vector" src={vector20} />
+
+          <img className="vector-6" alt="Vector" src={vector21} />
+
+          <img className="vector-7" alt="Vector" src={vector22} />
+
+          <img className="vector-8" alt="Vector" src={vector23} />
+        </div>
+
+        <div className="home-indicator">
+          <div className="home-indicator-2" />
+        </div>
+
+        <div className="status-bar-iphone-x">
+          <div className="right-side">
+            <img className="battery" alt="Battery" src={battery} />
+
+            <img className="wifi" alt="Wifi" src={wifi} />
+
+            <img
+              className="mobile-signal"
+              alt="Mobile signal"
+              src={mobileSignal}
+            />
+          </div>
+
+          <img className="left-side" alt="Left side" src={leftSide} />
+        </div>
+
+        <img className="group" alt="Group" src={group2} />
+
+        <img className="image" alt="Image" src={image3} />
+
+        <img className="image-2" alt="Image" src={image4} />
+
+        <div className="overlap">
+          <img className="rectangle" alt="Rectangle" src={rectangle41} />
+
+          <img className="group-2" alt="Group" src={group6} />
+        </div>
+      </div>
+    </div>
+  );
+};

@@ -23,11 +23,21 @@ const slangDictionary = {
     "오운완" : "오늘 운동 완료",
     // 추가적인 신조어와 정의를 여기에 추가할 수 있습니다.
 };
+// 회원가입과 로그인 선택에 따라 섹션 전환
+document.querySelectorAll('input[name="auth-option"]').forEach(option => {
+    option.addEventListener('change', function() {
+        if (this.id === 'signup-option') {
+            document.getElementById('signup-section').classList.remove('hidden');
+            document.getElementById('login-section').classList.add('hidden');
+        } else {
+            document.getElementById('signup-section').classList.add('hidden');
+            document.getElementById('login-section').classList.remove('hidden');
+        }
+    });
+});
 
 // 회원가입 처리
-document.getElementById('signup-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-
+document.getElementById('signup-button').addEventListener('click', function() {
     const username = document.getElementById('signup-username').value;
     const password = document.getElementById('signup-password').value;
     const nickname = document.getElementById('signup-nickname').value;
@@ -41,14 +51,17 @@ document.getElementById('signup-form').addEventListener('submit', function(event
         users[username] = { password: password, nickname: nickname };
         localStorage.setItem('users', JSON.stringify(users));
         document.getElementById('auth-message').innerText = '회원가입 성공! 로그인 해주세요.';
+
+        // 회원가입 성공 후 자동으로 로그인 섹션으로 전환
+        document.getElementById('signup-section').classList.add('hidden');
+        document.getElementById('login-section').classList.remove('hidden');
+        document.getElementById('login-username').value = username; // 자동으로 사용자 이름 입력
         document.getElementById('signup-form').reset();
     }
 });
 
 // 로그인 처리
-document.getElementById('login-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-
+document.getElementById('login-button').addEventListener('click', function() {
     const username = document.getElementById('login-username').value;
     const password = document.getElementById('login-password').value;
 
@@ -95,6 +108,7 @@ function levenshtein(a, b) {
     }
     return matrix[b.length][a.length];
 }
+
 // 유사 단어 검색 (일치율 필터 추가)
 function findSimilarWords(input) {
     const threshold = 2;  // 편집 거리 임계값
@@ -112,6 +126,7 @@ function findSimilarWords(input) {
     }
     return similarWords;
 }
+
 // 신조어 검색 처리
 document.getElementById('search-button').addEventListener('click', function() {
     const keyword = document.getElementById('keyword').value.trim();

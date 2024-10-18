@@ -50,25 +50,41 @@ form input {
     font-size: 16px;
 }
 
-form button {
-    width: 80%;
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
+/* 버튼 기본 스타일 */
+form button,
 #delete-users-button {
     width: 80%;
     padding: 10px;
-    background-color: #f44336;
-    color: white;
     border: none;
     border-radius: 5px;
     font-size: 16px;
-    margin-top: 20px;
+    background-size: cover; /* 배경 이미지 크기를 버튼에 맞춤 */
+    color: white;
+    cursor: pointer;
+}
+
+/* 회원가입 버튼 스타일 */
+#signup-button {
+    background-image: url('path/to/signup-image.png'); /* 회원가입 버튼 이미지 */
+    background-color: transparent; /* 배경색 없애기 */
+}
+
+/* 로그인 버튼 스타일 */
+#login-button {
+    background-image: url('path/to/login-image.png'); /* 로그인 버튼 이미지 */
+    background-color: transparent; /* 배경색 없애기 */
+}
+
+/* 사용자 삭제 버튼 스타일 */
+#delete-users-button {
+    background-image: url('path/to/delete-image.png'); /* 사용자 삭제 버튼 이미지 */
+    background-color: transparent; /* 배경색 없애기 */
+}
+
+/* 검색 버튼 스타일 */
+#search-button {
+    background-image: url('path/to/search-image.png'); /* 검색 버튼 이미지 */
+    background-color: transparent; /* 배경색 없애기 */
 }
 
 #auth-message {
@@ -89,7 +105,7 @@ form button {
     margin-top: 20px;
 }
 
-#search-section input, #search-section button {
+#search-section input {
     width: 80%;
     padding: 10px;
     margin-bottom: 10px;

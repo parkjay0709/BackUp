@@ -12,21 +12,37 @@
     <div class="phone-container">
         <h1>신조어 검색기</h1>
 
+        <!-- 사용자 선택 섹션 -->
+        <div id="auth-selection">
+            <label>
+                <input type="radio" name="auth-option" id="signup-option" checked>
+                회원가입
+            </label>
+            <label>
+                <input type="radio" name="auth-option" id="login-option">
+                로그인
+            </label>
+        </div>
+
         <div id="auth-section">
-            <h2>회원가입</h2>
-            <!-- 회원가입 및 로그인 폼 -->
-            <form id="signup-form">
-                <input type="text" id="signup-username" placeholder="아이디" required>
-                <input type="password" id="signup-password" placeholder="비밀번호" required>
-                <input type="text" id="signup-nickname" placeholder="닉네임" required>
-                <button type="submit">회원가입</button>
-            </form>
-            <h2>로그인</h2>
-            <form id="login-form">
-                <input type="text" id="login-username" placeholder="아이디" required>
-                <input type="password" id="login-password" placeholder="비밀번호" required>
-                <button type="submit">로그인</button>
-            </form>
+            <div id="signup-section">
+                <h2>회원가입</h2>
+                <form id="signup-form">
+                    <input type="text" id="signup-username" placeholder="아이디" required>
+                    <input type="password" id="signup-password" placeholder="비밀번호" required>
+                    <input type="text" id="signup-nickname" placeholder="닉네임" required>
+                    <button type="submit">회원가입</button>
+                </form>
+            </div>
+
+            <div id="login-section" class="hidden">
+                <h2>로그인</h2>
+                <form id="login-form">
+                    <input type="text" id="login-username" placeholder="아이디" required>
+                    <input type="password" id="login-password" placeholder="비밀번호" required>
+                    <button type="submit">로그인</button>
+                </form>
+            </div>
         </div>
 
         <!-- 환영 메시지 -->
@@ -42,3 +58,4 @@
 
     <script src="script.js"></script>
 </body>
+</html>
