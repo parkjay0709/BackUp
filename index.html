@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 및 로그인</title>
+</head>
+<body>
+    <h1>회원가입</h1>
+    <form id="signup-form">
+        <input type="text" id="signup-username" placeholder="사용자 이름" required>
+        <input type="password" id="signup-password" placeholder="비밀번호" required>
+        <button type="submit">회원가입</button>
+    </form>
+
+    <h1>로그인</h1>
+    <form id="login-form">
+        <input type="text" id="login-username" placeholder="사용자 이름" required>
+        <input type="password" id="login-password" placeholder="비밀번호" required>
+        <button type="submit">로그인</button>
+    </form>
+
+    <div id="message"></div>
+
+    <script src="auth.js"></script>
+</body>
+</html>
