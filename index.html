@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,38 +9,45 @@
         body {
             font-family: Arial, sans-serif;
         }
+
         .hidden {
             display: none;
         }
     </style>
 </head>
+
 <body>
     <h1>신조어 검색기</h1>
 
     <div id="auth-section">
         <h2>회원가입</h2>
+        <!-- 회원가입 폼 -->
         <form id="signup-form">
-            <input type="text" id="signup-username" placeholder="사용자 이름" required>
+            <input type="text" id="signup-username" placeholder="아이디" required>
             <input type="password" id="signup-password" placeholder="비밀번호" required>
+            <input type="text" id="signup-nickname" placeholder="닉네임" required>
             <button type="submit">회원가입</button>
         </form>
 
         <h2>로그인</h2>
+        <!-- 로그인 폼 -->
         <form id="login-form">
-            <input type="text" id="login-username" placeholder="사용자 이름" required>
+            <input type="text" id="login-username" placeholder="아이디" required>
             <input type="password" id="login-password" placeholder="비밀번호" required>
             <button type="submit">로그인</button>
         </form>
-        <div id="auth-message"></div>
     </div>
 
+    <div id="auth-message"></div>
+
+    <!-- 신조어 검색 섹션 -->
     <div id="search-section" class="hidden">
-        <h2>신조어 검색</h2>
-        <input type="text" id="keyword" placeholder="신조어를 입력하세요" required>
+        <input type="text" id="keyword" placeholder="신조어를 검색하세요">
         <button id="search-button">검색</button>
         <div id="result"></div>
     </div>
 
     <script src="script.js"></script>
 </body>
+
 </html>

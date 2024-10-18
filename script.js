@@ -30,13 +30,15 @@ document.getElementById('signup-form').addEventListener('submit', function(event
 
     const username = document.getElementById('signup-username').value;
     const password = document.getElementById('signup-password').value;
+    const nickname = document.getElementById('signup-nickname').value;
 
     const users = JSON.parse(localStorage.getItem('users')) || {};
 
     if (users[username]) {
         document.getElementById('auth-message').innerText = '이미 존재하는 사용자 이름입니다.';
     } else {
-        users[username] = password;
+        // 닉네임과 비밀번호를 함께 저장
+        users[username] = { password: password, nickname: nickname };
         localStorage.setItem('users', JSON.stringify(users));
         document.getElementById('auth-message').innerText = '회원가입 성공! 로그인 해주세요.';
         document.getElementById('signup-form').reset();
@@ -52,8 +54,9 @@ document.getElementById('login-form').addEventListener('submit', function(event)
 
     const users = JSON.parse(localStorage.getItem('users')) || {};
 
-    if (users[username] && users[username] === password) {
-        document.getElementById('auth-message').innerText = '로그인 성공!';
+    if (users[username] && users[username].password === password) {
+        const nickname = users[username].nickname;  // 닉네임 가져오기
+        document.getElementById('auth-message').innerText = `${nickname}님 환영합니다!`;
         document.getElementById('auth-section').classList.add('hidden');
         document.getElementById('search-section').classList.remove('hidden');
     } else {
